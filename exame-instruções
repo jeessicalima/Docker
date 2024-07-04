@@ -1,0 +1,19 @@
+Links:
+    DockerHub: https://hub.docker.com/repository/docker/jeessicalima/exame-renato/general
+
+    GitHub: https://github.com/jeessicalima/exame.git
+
+Comandos:
+    No terminal executar comando: docker-compose up
+
+    Para que a aplicação inicie por completo após falha na imagem, será necessário dar um novo start na aplicação após o MySQL ser totalmente inicializado
+
+
+
+Informações:
+http://localhost:3000
+http://localhost:3000/consulta-dados
+http://localhost:3000/liveness
+http://localhost:3000/readiness
+http://localhost:3000/temperatura?cidade=presidente prudente
+

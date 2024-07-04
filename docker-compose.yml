@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: user
+      MYSQL_PASSWORD: passwd
+      MYSQL_DATABASE: db_aula
+    ports:
+      - "3306:3306"
+    networks:
+      - exame
+    volumes:
+      - ./carga.sql:/docker-entrypoint-initdb.d/carga.sql:ro
+
+  nodejs:
+    image: jeessicalima/exame-renato:0.0.1
+    container_name: exame_renato
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    networks:
+      - exame
+
+networks:
+  exame:
